@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="xv6_clion"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="xv6_clion">
+				<Option output="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/xv6_clion.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/yeeha/CLionProjects/xv6-clion/."/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 xv6_clion"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="xv6_clion/fast">
+				<Option output="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/xv6_clion.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/yeeha/CLionProjects/xv6-clion/."/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 xv6_clion/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/asm.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/bio.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/bootmain.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/buf.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/cat.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/console.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/date.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/defs.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/echo.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/elf.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/exec.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/fcntl.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/file.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/file.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/forktest.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/fs.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/fs.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/grep.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/ide.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/init.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/ioapic.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/kalloc.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/kbd.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/kbd.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/kill.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/lapic.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/ln.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/log.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/ls.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/main.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/memide.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/memlayout.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/mkdir.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/mkfs.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/mmu.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/mp.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/mp.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/param.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/picirq.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/pipe.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/printf.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/proc.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/proc.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/rm.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/sh.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/sleeplock.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/sleeplock.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/spinlock.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/spinlock.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/stat.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/stressfs.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/string.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/syscall.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/syscall.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/sysfile.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/sysproc.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/test.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/trap.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/traps.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/types.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/uart.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/ulib.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/umalloc.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/user.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/usertests.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/vm.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/wc.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/x86.h">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/zombie.c">
+			<Option target="xv6_clion"/>
+		</Unit>
+		<Unit filename="C:/Users/yeeha/CLionProjects/xv6-clion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

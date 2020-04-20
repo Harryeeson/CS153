@@ -1,0 +1,3 @@
+C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/CMakeFiles/xv6_clion.dir
+C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/yeeha/CLionProjects/xv6-clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
