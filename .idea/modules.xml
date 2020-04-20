@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/xv6-clion.iml" filepath="$PROJECT_DIR$/.idea/xv6-clion.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/CS153.iml" filepath="$PROJECT_DIR$/.idea/CS153.iml" />
+>>>>>>> 0ec4842b6a2b3c0e5e82528af7a3393ff47a5fee
     </modules>
   </component>
 </project>
