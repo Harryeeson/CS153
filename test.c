@@ -3,6 +3,6 @@
 #include "user.h"
 
 int main(int argc, char *argv[]) {
-    printf(1, "helloo\n");
+    printf(1, "partb\n");
     exit(0);
 }
