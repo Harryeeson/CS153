@@ -97,7 +97,11 @@ sys_uptime(void)
 
 int
 sys_waitpid(void)
-{
+{  
+    int pid, options, status;
+    if (argint(0, &pid) > 0) { return -1;}
+    if (argptr(1, (char**) &status, sizeof(status))) {return -1;}
+    if (argint(2, &options)) {return -1;}
 
-
+    return waitpid(pid, status, options);
 }
