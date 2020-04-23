@@ -1,7 +1,6 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
-#include "proc.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,7 +13,7 @@ int main(int argc, char *argv[])
 
     if (child_pid == 0)
     {
-        printf("Child PID is %ld\n", (long) getpid());
+        printf(1, "Child PID is %ld\n", (long) getpid());
         // in child; do stuff including perhaps exec
     }
     else if (child_pid == -1)
@@ -26,11 +25,12 @@ int main(int argc, char *argv[])
         if (waitpid(child_pid, &status, 0) == child_pid)
         {
             // child exited or interrupted; now you can do something with status
-                    printf("Parent PID is %ld\n", (long) getpid());
+                    printf(1, "Parent PID is %ld\n", (long) getpid());
         }
         else
         {
             exit(-1);
         }
     }
+    return 0;
 }
