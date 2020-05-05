@@ -262,7 +262,7 @@ exit(int status)
         wakeup1(initproc);
     }
   }
-
+    curproc->status = status;
   // Jump into the scheduler, never to return.
   curproc->state = ZOMBIE;
   sched();
@@ -288,6 +288,9 @@ wait(int *status)
       havekids = 1;
       if(p->state == ZOMBIE){
         // Found one.
+        if(status) {
+            *status = p->status;
+        }
         pid = p->pid;
         kfree(p->kstack);
         p->kstack = 0;
@@ -557,6 +560,9 @@ waitpid(int pid, int *status, int options)
             havekids = 1;
             if(p->state == ZOMBIE){
                 // Found one.
+                if(status = p->status) {
+                    *status = p->status;
+                }
                 pid = p->pid;
                 kfree(p->kstack);
                 p->kstack = 0;
