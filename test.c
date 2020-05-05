@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     if (child_pid == 0)
     {
-        printf(1, "Child PID is %ld\n", (long) getpid());
+        printf(1, "Child PID is %d", child_pid);
         // in child; do stuff including perhaps exec
     }
     else if (child_pid == -1)
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         if (waitpid(child_pid, &status, 0) == child_pid)
         {
             // child exited or interrupted; now you can do something with status
-                    printf(1, "Parent PID is %ld\n", (long) getpid());
+                    printf(1, "Parent PID is %d", child_pid);
         }
         else
         {

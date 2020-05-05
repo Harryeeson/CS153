@@ -112,6 +112,9 @@ found:
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
 
+
+  // initialize priority value to lowest value (31)
+  p-> prior_val = 31;
   return p;
 }
 
@@ -199,6 +202,7 @@ fork(void)
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;
+  np->prior_val = curproc->prior_val // child inherits parent's priority val
 
   // Clear %eax so that fork returns 0 in the child.
   np->tf->eax = 0;
@@ -220,8 +224,6 @@ fork(void)
 
   return pid;
 }
-
-// Exit the current process.  Does not return.
 // An exited process remains in the zombie state
 // until its parent calls wait() to find out it exited.
 void
@@ -381,7 +383,7 @@ sched(void)
   mycpu()->intena = intena;
 }
 
-// Give up the CPU for one scheduling round.
+/d/ Give up the CPU for one scheduling round.
 void
 yield(void)
 {
@@ -573,4 +575,14 @@ waitpid(int pid, int *status, int options)
         // Wait for children to exit.  (See wakeup1 call in proc_exit.)
         sleep(curproc, &ptable.lock);  //DOC: wait-sleep
     }
+}
+
+
+// addition or lab 2
+void set_prior(int prior_lvl) {
+   struct proc *p;
+
+   p->prior_val = int prior_lvl;
+   
+   sched();   
 }
