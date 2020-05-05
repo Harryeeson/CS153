@@ -202,7 +202,7 @@ fork(void)
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;
-  np->prior_val = curproc->prior_val // child inherits parent's priority val
+  np->prior_val = curproc->prior_val; // child inherits parent's priority val
 
   // Clear %eax so that fork returns 0 in the child.
   np->tf->eax = 0;
@@ -388,7 +388,7 @@ sched(void)
   mycpu()->intena = intena;
 }
 
-/d/ Give up the CPU for one scheduling round.
+// Give up the CPU for one scheduling round.
 void
 yield(void)
 {
@@ -585,9 +585,9 @@ waitpid(int pid, int *status, int options)
 
 // addition or lab 2
 void set_prior(int prior_lvl) {
-   struct proc *p;
+   struct proc *p = myproc();
 
-   p->prior_val = int prior_lvl;
+   p->prior_val = prior_lvl;
    
    sched();   
 }
