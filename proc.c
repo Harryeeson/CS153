@@ -334,8 +334,13 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+    // additions for lab 2
+    struct proc *maxprior;
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
+      // if find the maximum priority and set to maxprior
+      if(p->state == RUNNABLE && p->prior_val < maxprior->prior_val) {
+	   maxprior = p;
+	}
         continue;
 
       // Switch to chosen process.  It is the process's job
