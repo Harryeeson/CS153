@@ -8,6 +8,7 @@ struct cpu {
   int ncli;                    // Depth of pushcli nesting.
   int intena;                  // Were interrupts enabled before pushcli?
   struct proc *proc;           // The process running on this cpu or null
+  int prior_val; 	       // priority value range [0, 31]
 };
 
 extern struct cpu cpus[NCPU];
