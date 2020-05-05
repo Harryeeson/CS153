@@ -114,7 +114,7 @@ found:
 
 
   // initialize priority value to lowest value (31)
-  p-> prior_val = 31;
+  p->prior_val = 31;
   return p;
 }
 
@@ -560,7 +560,7 @@ waitpid(int pid, int *status, int options)
             havekids = 1;
             if(p->state == ZOMBIE){
                 // Found one.
-                if(status = p->status) {
+                if(status) {
                     *status = p->status;
                 }
                 pid = p->pid;
