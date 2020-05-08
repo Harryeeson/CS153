@@ -106,3 +106,7 @@ sys_waitpid(void)
 
     return waitpid(pid, status, options);
 }
+
+void sys_set_prior(void) {
+    set_prior();   
+}

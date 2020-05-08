@@ -338,28 +338,27 @@ scheduler(void)
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     // additions for lab 2
-    struct proc *maxprior;
+    struct proc *maxprior = malloc(sizeof(*proc));
+    maxprior->prior_val = 31;
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       // if find the maximum priority and set to maxprior
       if(p->state == RUNNABLE && p->prior_val < maxprior->prior_val) {
 	   maxprior = p;
 	}
-        continue;
-
+    }
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
-      c->proc = p;
-      switchuvm(p);
-      p->state = RUNNING;
+      c->proc = maxprior;
+      switchuvm(maxprior);
+      maxprior->state = RUNNING;
 
-      swtch(&(c->scheduler), p->context);
+      swtch(&(c->scheduler), maxprior->context);
       switchkvm();
 
       // Process is done running for now.
       // It should have changed its p->state before coming back.
       c->proc = 0;
-    }
     release(&ptable.lock);
 
   }
@@ -596,4 +595,5 @@ void set_prior(int prior_lvl) {
    p->prior_val = prior_lvl;
    
    sched();   
+   return;
 }
