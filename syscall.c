@@ -129,7 +129,7 @@ static int (*syscalls[])(void) = {
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
 [SYS_waitpid] sys_waitpid,
-[SYS_set_prior] sys_set_prior
+[SYS_set_prior] sys_set_prior,
 };
 
 void

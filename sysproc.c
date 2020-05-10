@@ -108,5 +108,5 @@ sys_waitpid(void)
 }
 
 void sys_set_prior(void) {
-    set_prior();   
+    set_prior();
 }
