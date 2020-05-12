@@ -108,5 +108,6 @@ sys_waitpid(void)
 }
 
 void sys_set_prior(void) {
-    set_prior();
+    int prior = 31;
+    return set_prior(prior);   
 }
