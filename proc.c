@@ -88,6 +88,7 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
+  p->prior_val = 31;        //initializing prior val to lowest value 31
 
   release(&ptable.lock);
 
@@ -112,9 +113,6 @@ found:
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
 
-
-  // initialize priority value to lowest value (31)
-  p->prior_val = 31;
   return p;
 }
 
