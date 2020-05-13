@@ -333,9 +333,8 @@ scheduler(void)
 
   for(;;){
     // Enable interrupts on this processor.
-    sti();
-
     max = 31;
+    sti();
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     // additions for lab 2
@@ -636,11 +635,7 @@ waitpid(int pid, int *status, int options)
 
  //addition or lab 2
 void set_prior(int prior_lvl) {
-   struct proc *p = myproc();
-   acquire(&ptable.lock);
-   p->prior_val = prior_lvl;
-   sched();
-   release(&ptable.lock);
-
+    struct proc *p = myproc();
+    if(prior_lvl >=0 && prior_lvl<=31) p->prior_val= prior_lvl;
    return;
 }

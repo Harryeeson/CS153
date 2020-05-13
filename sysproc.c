@@ -107,6 +107,8 @@ sys_waitpid(void)
     return waitpid(pid, status, options);
 }
 
-void sys_set_prior(int prior) {
+void sys_set_prior(void) {
+    int prior = 31;
+    argint(0, &prior);
     return set_prior(prior);   
 }

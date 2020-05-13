@@ -5,14 +5,14 @@
 int main(int argc, char* argv[]) {
    set_prior(10);
    int i, k;
-   printf(1, "program start");
    const int loop = 1000;
    for (i = 0; i < loop; i++) {
       asm("nop");
       for (k = 0; k < loop; k++) {
          asm("nop");
       }
-      printf(1, "program 2 finished loop%d\n", i);
    }
+
+      printf(1, "program 2 finished loop%d\n", i);
    exit(0);
 }
