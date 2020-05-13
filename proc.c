@@ -326,35 +326,35 @@ void
 scheduler(void)
 {
   struct proc *p;
+  struct proc *mp;
   struct cpu *c = mycpu();
   c->proc = 0;
-  int max = 31;
   struct proc *maxprior = ptable.proc;
 
   for(;;){
     // Enable interrupts on this processor.
-    max = 31;
     sti();
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     // additions for lab 2
-    struct proc *mp;
+
+    for (p=ptable.proc; p<&ptable.proc[NPROC]; p++) {
+	if(p->state != RUNNABLE) continue;
+	maxprior = p;
+
+    for (mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++) {
+	// find max priority
+	if(maxprior->prior_val >= mp->prior_val && mp->state == RUNNABLE) {
+	   maxprior = mp;
+	}
+    }
+    
     for(mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++){
-      // if find the maximum priority and set to maxprior
+        // process priority aging
+	if (mp->state != RUNNABLE) { continue;}
    	if (mp->prior_val >= 1) mp->prior_val -=1;
 	if (mp->prior_val <= 0) mp->prior_val = 0;
     }
-
-    for (mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++) {
-	if(max >= mp->prior_val && mp->state==RUNNABLE) {
-	   maxprior = mp;
-	   max = mp->prior_val;
-	}
-    }
-    for (p=ptable.proc; p<&ptable.proc[NPROC]; p++) {
-	if(p->state != RUNNABLE) continue;
-
-    if (maxprior->state != RUNNABLE) { continue;}
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
