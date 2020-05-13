@@ -337,7 +337,7 @@ scheduler(void)
     acquire(&ptable.lock);
     // additions for lab 2
     struct proc *maxprior;
-    maxprior = ptable.proc; 
+    maxprior = ptable.proc;
     int max = 31;
 
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
@@ -345,7 +345,7 @@ scheduler(void)
       if(p->state == RUNNABLE && p->prior_val < max) {
 	   maxprior = p;
 	   max = p->prior_val;
-	}
+      }
     }
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
@@ -627,9 +627,10 @@ waitpid(int pid, int *status, int options)
  //addition or lab 2
 void set_prior(int prior_lvl) {
    struct proc *p = myproc();
-
+   acquire(&ptable.lock);
    p->prior_val = prior_lvl;
-
    sched();
+   release(&ptable.lock);
+
    return;
 }
