@@ -3,7 +3,7 @@
 #include "user.h"
 
 int main(ing argc, char(argv[]) {
-   setpriority(10);
+   set_prior(10);
    int i, k;
    const int loop = 1000;
    for (i = 0; i < loop; i++) {
