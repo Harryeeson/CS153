@@ -365,6 +365,7 @@ scheduler(void)
       swtch(&(c->scheduler), maxprior->context);
       switchkvm();
 
+	if(maxprior->prior_val < 31) maxprior->prior_val++;
       // Process is done running for now.
       // It should have changed its p->state before coming back.
       c->proc = 0; 
@@ -635,7 +636,10 @@ waitpid(int pid, int *status, int options)
 
  //addition or lab 2
 void set_prior(int prior_lvl) {
+    cprintf("priority set to %d\n", prior_lvl);
     struct proc *p = myproc();
+   acquire(&ptable.lock); 
     if(prior_lvl >=0 && prior_lvl<=31) p->prior_val= prior_lvl;
-   return;
+	release(&ptable.lock);   
+	yield();
 }
