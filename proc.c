@@ -328,25 +328,34 @@ scheduler(void)
   struct proc *p;
   struct cpu *c = mycpu();
   c->proc = 0;
+  int max = 31;
+  struct proc *maxprior = ptable.proc;
 
   for(;;){
     // Enable interrupts on this processor.
     sti();
 
+    max = 31;
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     // additions for lab 2
-    struct proc *maxprior;
-    maxprior = ptable.proc;
-    int max = 31;
-
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    struct proc *mp;
+    for(mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++){
       // if find the maximum priority and set to maxprior
-      if(p->state == RUNNABLE && p->prior_val < max) {
-	   maxprior = p;
-	   max = p->prior_val;
-      }
+   	if (mp->prior_val >= 1) mp->prior_val -=1;
+	if (mp->prior_val <= 0) mp->prior_val = 0;
     }
+
+    for (mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++) {
+	if(max >= mp->prior_val && mp->state==RUNNABLE) {
+	   maxprior = mp;
+	   max = mp->prior_val;
+	}
+    }
+    for (p=ptable.proc; p<&ptable.proc[NPROC]; p++) {
+	if(p->state != RUNNABLE) continue;
+
+    if (maxprior->state != RUNNABLE) { continue;}
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
@@ -359,7 +368,8 @@ scheduler(void)
 
       // Process is done running for now.
       // It should have changed its p->state before coming back.
-      c->proc = 0;
+      c->proc = 0; 
+     }
     release(&ptable.lock);
 
   }
