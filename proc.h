@@ -53,6 +53,7 @@ struct proc {
   int status;
   int t_finish;
   int t_start;
+  int t_burst;
 };
 
 // Process memory is laid out contiguously, low addresses first:

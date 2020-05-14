@@ -269,7 +269,9 @@ exit(int status)
   cprintf("Finish time is: %d\n", curproc->t_finish);
   int t_turnaround = curproc->t_finish - curproc->t_start;
   cprintf("Turnaround time is: %d\n", t_turnaround);
-
+  int t_waiting = t_turnaround - curproc->t_burst;
+  cprintf("Burst time is: %d\n", curproc->t_burst);
+  cprintf("Waiting time is: %d\n", t_waiting);
   sched();
   panic("zombie exit");
 }
@@ -346,36 +348,40 @@ scheduler(void)
     // additions for lab 2
 
     for (p=ptable.proc; p<&ptable.proc[NPROC]; p++) {
-	if(p->state != RUNNABLE) continue;
-	maxprior = p;
+        if(p->state != RUNNABLE) {continue;}
+        maxprior = p;
 
-    for (mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++) {
-	// find max priority
-	if(maxprior->prior_val >= mp->prior_val && mp->state == RUNNABLE) {
-	   maxprior = mp;
-	}
-    }
+        for (mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++) {
+        // find max priority
+            if(maxprior->prior_val >= mp->prior_val && mp->state == RUNNABLE) {
+               maxprior = mp;
+            }
+        }
     
-    for(mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++){
-        // process priority aging
-	if (mp->state != RUNNABLE) { continue;}
-   	if (mp->prior_val >= 1) mp->prior_val -=1;
-	if (mp->prior_val <= 0) mp->prior_val = 0;
-    }
-      // Switch to chosen process.  It is the process's job
-      // to release ptable.lock and then reacquire it
-      // before jumping back to us.
-      c->proc = maxprior;
-      switchuvm(maxprior);
-      maxprior->state = RUNNING;
+        for(mp = ptable.proc; mp < &ptable.proc[NPROC]; mp++){
+            // process priority aging
+            if (mp->state != RUNNABLE) { continue;}
+            if (mp->prior_val >= 1) {mp->prior_val -=1;}
+            if (mp->prior_val <= 0) {mp->prior_val = 0;}
+            mp->t_burst++;
 
-      swtch(&(c->scheduler), maxprior->context);
-      switchkvm();
+        }
+          // Switch to chosen process.  It is the process's job
+          // to release ptable.lock and then reacquire it
+          // before jumping back to us.
+          c->proc = maxprior;
+          switchuvm(maxprior);
+          maxprior->state = RUNNING;
 
-	if(maxprior->prior_val < 31) maxprior->prior_val++;
-      // Process is done running for now.
-      // It should have changed its p->state before coming back.
-      c->proc = 0; 
+          swtch(&(c->scheduler), maxprior->context);
+          switchkvm();
+
+        if(maxprior->prior_val <= 29) {maxprior->prior_val += 2;}
+        if(maxprior->prior_val > 29) {maxprior->prior_val = 31;}
+
+          // Process is done running for now.
+          // It should have changed its p->state before coming back.
+          // c->proc = 0;
      }
     release(&ptable.lock);
 
