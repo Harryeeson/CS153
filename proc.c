@@ -90,6 +90,8 @@ found:
   p->pid = nextpid++;
   p->prior_val = 31;        //initializing prior val to lowest value 31
   p->t_start = ticks;
+  p->t_burst = 0;
+  p->t_finish = 0;
   cprintf("Start time is: %d\n", p->t_start);
 
   release(&ptable.lock);
@@ -363,7 +365,6 @@ scheduler(void)
             if (mp->state != RUNNABLE) { continue;}
             if (mp->prior_val >= 1) {mp->prior_val -=1;}
             if (mp->prior_val <= 0) {mp->prior_val = 0;}
-            mp->t_burst++;
 
         }
           // Switch to chosen process.  It is the process's job
@@ -372,6 +373,7 @@ scheduler(void)
           c->proc = maxprior;
           switchuvm(maxprior);
           maxprior->state = RUNNING;
+          maxprior->t_burst++;
 
           swtch(&(c->scheduler), maxprior->context);
           switchkvm();
@@ -381,7 +383,7 @@ scheduler(void)
 
           // Process is done running for now.
           // It should have changed its p->state before coming back.
-          // c->proc = 0;
+          c->proc = 0;
      }
     release(&ptable.lock);
 
