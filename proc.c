@@ -89,6 +89,8 @@ found:
   p->state = EMBRYO;
   p->pid = nextpid++;
   p->prior_val = 31;        //initializing prior val to lowest value 31
+  p->t_start = ticks;
+  cprintf("Start time is: %d\n", p->t_start);
 
   release(&ptable.lock);
 
@@ -263,6 +265,11 @@ exit(int status)
     curproc->status = status;
   // Jump into the scheduler, never to return.
   curproc->state = ZOMBIE;
+  curproc->t_finish = ticks;
+  cprintf("Finish time is: %d\n", curproc->t_finish);
+  int t_turnaround = curproc->t_finish - curproc->t_start;
+  cprintf("Turnaround time is: %d\n", t_turnaround);
+
   sched();
   panic("zombie exit");
 }
