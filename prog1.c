@@ -3,7 +3,7 @@
 #include "user.h"
 
 int main(int argc, char* argv[]) {
-   set_prior(31);
+   set_prior(1);
    int i, k;
    const int loop = 1000;
    for (i = 0; i < loop; i++) {
@@ -13,6 +13,6 @@ int main(int argc, char* argv[]) {
       }
    }
 
-      printf(1, "program 1 finished loop%d\n", i);
+      printf(1, "--------program 1 finished loop1--------%d\n", i);
    exit(0);
 }

@@ -88,8 +88,8 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
-  p->prior_val = 31;        //initializing prior val to lowest value 31
   p->t_start = ticks;
+  p->prior_val = 31;        //initializing prior val to lowest value 31
   cprintf("Start time is: %d\n", p->t_start);
 
   release(&ptable.lock);
